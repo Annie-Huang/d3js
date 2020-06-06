@@ -32,4 +32,5 @@ const bars = container
     .append('div')
     .classed('bar', true)
     .style('width', '50px')  // Total width of the container is 250px and we have 4 data points.
-    .style('height', '150px');
+    // .style('height', '150px');
+    .style('height', data => (data.value * 15) + 'px'  );
