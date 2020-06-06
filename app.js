@@ -21,8 +21,15 @@ const DUMMY_DATA = [
 //     .append('p')
 //     .text(dta => dta.region);
 
-d3.select('div')
+const container = d3.select('div')
     .classed('container', true)
     .style('border', '1px solid red');
 
-
+const bars = container
+    .selectAll('.bar')
+    .data(DUMMY_DATA)
+    .enter()
+    .append('div')
+    .classed('bar', true)
+    .style('width', '50px')  // Total width of the container is 250px and we have 4 data points.
+    .style('height', '150px');
