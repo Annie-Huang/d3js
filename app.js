@@ -7,6 +7,16 @@ const DUMMY_DATA = [
     {id: 'd4', value: 6, region: 'Germany'},
 ];
 
+// give us the same width for all the bar
+const xScale = d3
+    .scaleBand()
+    .domain(DUMMY_DATA.map(dataPoint => dataPoint.region))
+    .rangeRound([0, 250])
+    .padding(0.1);
+// The rangeRound needs to reverse for yScale so it can start from the bottom of the container rather than from the top
+const yScale = d3.scaleLinear().domain([0, 15]).rangeRound([200, 0]);
+
+
 // d3.select('div')
 //     .selectAll('p')
 //     .data([1,2,3])
@@ -45,5 +55,7 @@ const bars = container
     .enter()
     .append('rect')
     .classed('bar', true)
-    .style('width', 50)  // Total width of the container is 250px and we have 4 data points.
-    .style('height', data => data.value * 15);
+    .attr('width', xScale.bandwidth())  // Total width of the container is 250px and we have 4 data points.
+    .attr('height', data => yScale(data.value))
+    .attr('x', data => xScale(data.region));
+
