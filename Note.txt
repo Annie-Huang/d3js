@@ -6,3 +6,5 @@ https://github.com/Annie-Huang/d3js
 https://d3js.org/
 
 ===========================================
+
+C:\react\d3js>npm init -y

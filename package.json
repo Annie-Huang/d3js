@@ -1,0 +1,20 @@
+{
+  "name": "d3js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Annie-Huang/d3js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Annie-Huang/d3js/issues"
+  },
+  "homepage": "https://github.com/Annie-Huang/d3js#readme"
+}
