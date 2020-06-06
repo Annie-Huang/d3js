@@ -56,6 +56,7 @@ const bars = container
     .append('rect')
     .classed('bar', true)
     .attr('width', xScale.bandwidth())  // Total width of the container is 250px and we have 4 data points.
-    .attr('height', data => yScale(data.value))
-    .attr('x', data => xScale(data.region));
+    .attr('height', data => 200 - yScale(data.value)) // Need to minors because because we start from left bottom, not left top.
+    .attr('x', data => xScale(data.region))
+    .attr('y', data => yScale(data.value));
 
